@@ -123,11 +123,3 @@ if(__name__ == '__main__'):
         for i in zip(scaling_param['T_scaling_ip'], scaling_param['T_scaling_Tdump']):
             tscaling.append(TC.read_data(i[0],i[1]))
         plotscaling([i[1][1] for i in tscaling], [i[1][0][0] for i in tscaling],[i[1][0][1] for i in tscaling], 'Temperature Scaling', 'Temperature($K$)', 'Thermal Conductivity(W/mK)', scalingtype = 'Temperature')
-
-    
-    
-    
-    
-    #yo, yo1 = TC.read_data('input.txt', 'Temperature.txt')
-    #print yo 
-    #print yo1
