@@ -9,13 +9,17 @@ import sys # For command line args
 
 plt.style.use('ggplot') # R style plots
 
-# Class that contains all the data members and member functions
+# Class that contains all the data members and member functions required for calculating thermal gradient and Thermal Conductivity
 class TC:
     def __init__(self, ip_val = {}, temp_data = pd.DataFrame()):
         self.ip_val = ip_val # Values from the input files stored as a dict
         self.temp_data = temp_data # Values from the Temperature LAMMPS Dump file stored as a pandas df
-
-
+        self.meanTC = 0.0
+        self.stddevTC = 0.0
+        self.meaninvTC = 0.0
+        self.stddevinvTC = 0.0
+        self.boxsize = 0
+    
     @classmethod # Used to instantiate the class
     def read_data(cls, inputfile, tempdata):
         input_values = {}
@@ -38,8 +42,8 @@ class TC:
         #return input_values
 
         c = int(linecache.getline(tempdata, 4).split()[1]) + 1
-        hot = ((c-1)/4) + 3
-        cold = ((c-1)*3/4) - 3
+        hot = ((c-1)/4) + input_values['nbin_skip']
+        cold = ((c-1)*3/4) - input_values['nbin_skip']
         df = pd.read_csv(tempdata, delim_whitespace = True, comment = '#', header = None, names = ['Bin', 'Coord', 'Ncount', 'v_atemp'], chunksize = c, dtype = float)
         TC1 = cls(input_values, df)
         slope = []
@@ -47,7 +51,7 @@ class TC:
         for chunk in TC1.temp_data:
             chunk = chunk.dropna()
             chunk = chunk.reset_index(drop = True) 
-            boxsize = round(chunk.at[chunk.shape[0]-1, 'Coord'] - chunk.at[0, 'Coord'] )
+            TC1.boxsize = round(chunk.at[chunk.shape[0]-1, 'Coord'] - chunk.at[0, 'Coord'] )
             fit_region = [chunk.loc[hot:cold]['Coord'].values, chunk.loc[hot:cold]['v_atemp'].values]
             fit=np.polyfit(fit_region[0],fit_region[1],1)
             fit_fn=np.poly1d(fit)
@@ -56,13 +60,14 @@ class TC:
         by_row_index = df1.groupby(df1.index)
         df_means = by_row_index.mean()
         K = [TC1.ip_val['evtoWatt']*TC1.ip_val['heatflux']/i for i in slope]    
-        Kinv = [1/i for i in K]
-        K_mean = np.mean(K)
-        K_std = np.std(K)
-        Kinv_mean = np.mean(Kinv)
-        Kinv_std = np.std(Kinv)
-        print('Mean Thermal Conductivity is', K_mean,'\n', 'Standard Deviation in Thermal Conductivity is ',K_std, '\n')
-        print('Mean Inverse Thermal Conductivity is', Kinv_mean, '\n', 'Standard Deviation in Inverse Thermal Conductivity is', Kinv_std, '\n')
+        Kinv = [1.0/i for i in K]
+        print Kinv
+        TC1.meanTC = np.mean(K)
+        TC1.stddevTC = np.std(K)
+        TC1.meaninvTC = np.mean(Kinv)
+        TC1.stddevinvTC = np.std(Kinv)
+        print 'Mean Thermal Conductivity of ',TC1.meanTC ,'\n', 'Standard Deviation in Thermal Conductivity is ',TC1.stddevTC, '\n'
+        print 'Mean Inverse Thermal Conductivity is', TC1.meaninvTC, '\n', 'Standard Deviation in Inverse Thermal Conductivity is', TC1.stddevinvTC, '\n'
         fit_region = [df_means.loc[hot:cold]['Coord'].values, df_means.loc[hot:cold]['v_atemp'].values]
         fit=np.polyfit(fit_region[0],fit_region[1],1)
         fit_fn=np.poly1d(fit)
@@ -78,6 +83,19 @@ class TC:
         if(TC1.ip_val['plt_op'] == 'display'):
             plt.show()
         elif(TC1.ip_val['plt_op'] == 'png'):
-            plt.savefig('TC' + str(int(boxsize)) + '.png')
-        return [Kinv_mean, 1/boxsize]
-yo = TC.read_data('input.txt', 'Temperature.txt')
+            plt.savefig('TC' + str(int(TC1.boxsize)) + '.png')
+        return ((TC1.meaninvTC, TC1.stddevinvTC),  1/TC1.boxsize), ((TC1.meanTC, TC1.stddevTC), TC1.ip_val['temperature']) 
+
+if(__name__ == '__main__'):
+    scaling_param = {}
+    with open('scaling_params.txt', 'r') as fin:
+        for line in fin:
+            data = line.split()
+            try :
+                scaling_param.update({data[0]:float(data[1])})
+            except ValueError:
+                scaling_param.update({data[0]:data[1].split(',')})
+    print scaling_param
+    yo, yo1 = TC.read_data('input.txt', 'Temperature.txt')
+    print yo 
+    print yo1
