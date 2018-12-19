@@ -4,3 +4,4 @@ energy		0.431   # energy input into the system in ev/ps. Should be equal to ehea
 frequency   1000     # how frequently heat is supplied/extracted from system.  Should be equal to value of fix hot/cold  of in.heatflux file
 dtstep      0.002    # time step used in your md simulation in ps
 nbin_skip	3 # Number of bins to skip from hot and cold region. Adjust this to do the linear fit correctly
+plt_op		png # This could be 'png' or 'display' depending on how you want the plots to be displayed. 'display' displays on the terminal. 'png' saves as a png image. display requires xterm.

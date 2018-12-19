@@ -13,16 +13,19 @@ plt.style.use('ggplot') # R style plots
 class TC:
     def __init__(self, ip_val = {}, temp_data = pd.DataFrame()):
         self.ip_val = ip_val # Values from the input files stored as a dict
-        self.temp_data = temp_data
+        self.temp_data = temp_data # Values from the Temperature LAMMPS Dump file stored as a pandas df
 
 
-    @classmethod
+    @classmethod # Used to instantiate the class
     def read_data(cls, inputfile, tempdata):
         input_values = {}
         with open(inputfile, 'r') as fin:
             for line in fin:
                 data = line.split()
-                input_values.update({data[0]:float(data[1])})
+                try :
+                    input_values.update({data[0]:float(data[1])})
+                except ValueError:
+                    input_values.update({data[0]:data[1]})
         fin.close()
         # Area in Amstrong^2
         input_values.update({'Area': input_values['height']*input_values['width']})
@@ -41,7 +44,7 @@ class TC:
         TC1 = cls(input_values, df)
         slope = []
         df1  = pd.DataFrame()
-        for chunk in df:
+        for chunk in TC1.temp_data:
             chunk = chunk.dropna()
             chunk = chunk.reset_index(drop = True) 
             boxsize = round(chunk.at[chunk.shape[0]-1, 'Coord'] - chunk.at[0, 'Coord'] )
@@ -71,6 +74,10 @@ class TC:
         plt.title('Temperature Gradient', color = 'r', fontsize=20)
         plt.ylabel('Temperature(K)', fontsize=14)
         plt.xlabel('Distance ($\AA$)', fontsize=14)
-        plt.show()
+        #plt.show()
+        if(TC1.ip_val['plt_op'] == 'display'):
+            plt.show()
+        elif(TC1.ip_val['plt_op'] == 'png'):
+            plt.savefig('TC' + str(int(boxsize)) + '.png')
         return [Kinv_mean, 1/boxsize]
 yo = TC.read_data('input.txt', 'Temperature.txt')
