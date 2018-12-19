@@ -96,6 +96,38 @@ if(__name__ == '__main__'):
             except ValueError:
                 scaling_param.update({data[0]:data[1].split(',')})
     print scaling_param
-    yo, yo1 = TC.read_data('input.txt', 'Temperature.txt')
-    print yo 
-    print yo1
+    def plotscaling(X = [], Y = [], yerror = [], title = [], xlabel = [], ylabel = [], flag = 'png', scalingtype = 'length'):
+        fig = plt.figure(figsize=(10,8))
+        plt.title(title, color = 'r', fontsize=20)
+        plt.xlabel(xlabel, fontsize=14)
+        plt.ylabel(ylabel, fontsize=14)
+        plt.xticks(fontsize = 14)
+        plt.yticks(fontsize = 14)
+        plt.errorbar(X, Y, yerr = yerror)
+        if(flag == 'display'):
+            plt.show()
+        elif(flag == 'png'):
+            plt.savefig(scalingtype + 'Scaling' + '.png')
+
+    if(not(scaling_param['L_scaling']) and not(scaling_param['T_scaling'])):
+        plot = TC.read_data(scaling_param['default_ip'][0], scaling_param['default_Tdump'][0])
+    lscaling = []
+
+    if(scaling_param['L_scaling']):
+        for i in zip(scaling_param['L_scaling_ip'], scaling_param['L_scaling_Tdump']):
+            lscaling.append(TC.read_data(i[0],i[1]))
+        plotscaling([i[0][1] for i in lscaling], [i[0][0][0] for i in lscaling],[i[0][0][1] for i in lscaling], 'Length Scaling', 'Inverse Length(x10$\ \mu m^{-1}$)', 'Inverse Thermal Conductivity(mK/W)')
+    
+    tscaling = []
+    if(scaling_param['T_scaling']):
+        for i in zip(scaling_param['T_scaling_ip'], scaling_param['T_scaling_Tdump']):
+            tscaling.append(TC.read_data(i[0],i[1]))
+        plotscaling([i[1][1] for i in tscaling], [i[1][0][0] for i in tscaling],[i[1][0][1] for i in tscaling], 'Temperature Scaling', 'Temperature($K$)', 'Thermal Conductivity(W/mK)', scalingtype = 'Temperature')
+
+    
+    
+    
+    
+    #yo, yo1 = TC.read_data('input.txt', 'Temperature.txt')
+    #print yo 
+    #print yo1
