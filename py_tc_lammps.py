@@ -116,10 +116,10 @@ if(__name__ == '__main__'):
     if(scaling_param['L_scaling']):
         for i in zip(scaling_param['L_scaling_ip'], scaling_param['L_scaling_Tdump']):
             lscaling.append(TC.read_data(i[0],i[1]))
-        plotscaling([i[0][1] for i in lscaling], [i[0][0][0] for i in lscaling],[i[0][0][1] for i in lscaling], 'Length Scaling', 'Inverse Length(x10$\ \mu m^{-1}$)', 'Inverse Thermal Conductivity(mK/W)')
+        plotscaling([i[0][1] for i in lscaling], [i[0][0][0] for i in lscaling],[i[0][0][1] for i in lscaling], 'Length Scaling', 'Inverse Length(x10$\ \mu m^{-1}$)', 'Inverse Thermal Conductivity(mK/W)', flag = scaling_param['plt_op'][0], scalingtype = 'Length')
     
     tscaling = []
     if(scaling_param['T_scaling']):
         for i in zip(scaling_param['T_scaling_ip'], scaling_param['T_scaling_Tdump']):
             tscaling.append(TC.read_data(i[0],i[1]))
-        plotscaling([i[1][1] for i in tscaling], [i[1][0][0] for i in tscaling],[i[1][0][1] for i in tscaling], 'Temperature Scaling', 'Temperature($K$)', 'Thermal Conductivity(W/mK)', scalingtype = 'Temperature')
+        plotscaling([i[1][1] for i in tscaling], [i[1][0][0] for i in tscaling],[i[1][0][1] for i in tscaling], 'Temperature Scaling', 'Temperature($K$)', 'Thermal Conductivity(W/mK)', scalingtype = 'Temperature', flag = scaling_param['plt_op'][0])
