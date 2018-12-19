@@ -1,0 +1,8 @@
+height		3.5      #height of your system. This value can be seen from lammps dump file
+width		98.6048   # width of your system. This value can be seen from lammps dump file
+energy		0.431   # energy input into the system in ev/ps. Should be equal to eheat/rheat of in.heatflux file
+frequency   100     # how frequently heat is supplied/extracted from system.  Should be equal to value of fix hot/cold  of in.heatflux file
+dtstep      0.002    # time step used in your md simulation in ps
+temperature 100		# Temperature at which the simulation is carried out
+nbin_skip	3 # Number of bins to skip from hot and cold region. Adjust this to do the linear fit correctly
+plt_op		png # This could be 'png' or 'display' depending on how you want the plots to be displayed. 'display' displays on the terminal. 'png' saves as a png image. display requires xterm.

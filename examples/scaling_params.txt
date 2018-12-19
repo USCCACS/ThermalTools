@@ -1,0 +1,9 @@
+L_scaling	1 # parameter to specify whether to carry out length scaling or not. 0 means no length scaling. 1 means length scaling required.
+T_scaling	1 # parameter to specify whether to carry out temperature scaling or not.0 means no temperature scaling. 1 means temperature scaling required.
+default_Tdump	Temperature.txt # default temperature dump file for calculating thermal conductivity when no temperature/length scaling is not required
+default_ip		input.txt # default input file for calculating thermal conductivity when no temperature/length scaling is not required
+L_scaling_Tdump		L_scale1000.txt,L_scale800.txt,L_scale600.txt  # temperature dump files for length scaling
+T_scaling_Tdump		T_scale100.txt,T_scale200.txt,T_scale300.txt 	# temperature dump files for  temperature scaling
+L_scaling_ip	input_Lscale.txt,input_Lscale.txt,input_Lscale.txt  # input files for length scaling
+T_scaling_ip	input_Tscale_100.txt,input_Tscale_200.txt,input_Tscale_300.txt  # input files for temperature scaling
+plt_op		png # This could be 'png' or 'display' depending on how you want the plots to be displayed. 'display' displays on the terminal. 'png' saves as a png image. display requires xterm.
