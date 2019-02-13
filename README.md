@@ -1,2 +1,2 @@
-# py_tc_lammps_plugin
+#ThermalTools
 LAMMPS plugins for thermal conductivity and density of states calculation
