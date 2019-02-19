@@ -1,6 +1,6 @@
 ## Outline for the Manual
  
-1. [**Background**](#1.-Background) : Introduction to thermal conductivity, \kappa of materials
+1. [**Background**](#1.-Background) : Introduction to thermal conductivity, $\kappa$ of materials
 2. [**NEMD simulations**](#2.-NEMD-Simulations) : Calculation of $\Large{\kappa}$ using molecular dynamics simulations
 3. [**System size scaling**](#3.-System-size-scaling) : Effect of simulation cell size on calculated $\kappa$
 4. [**Temperature scaling**](#4.-Temperature-scaling) : Effect of system temperature on calculated $\kappa$
