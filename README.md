@@ -1,10 +1,10 @@
 ## Outline for the Manual
  
 1. [**Background**](#1.-Background) : Introduction to thermal conductivity, <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> of materials
-2. [**NEMD simulations**](#2.-NEMD-Simulations) : Calculation of $\Large{\kappa}$ using molecular dynamics simulations
-3. [**System size scaling**](#3.-System-size-scaling) : Effect of simulation cell size on calculated $\kappa$
-4. [**Temperature scaling**](#4.-Temperature-scaling) : Effect of system temperature on calculated $\kappa$
-5. [**Thermal conductivity plugins**](#5.-Thermal-conductivity-plugins) : Calculating $\kappa$ of MoS<sub>2</sub>
+2. [**NEMD simulations**](#2.-NEMD-Simulations) : Calculation of <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> using molecular dynamics simulations
+3. [**System size scaling**](#3.-System-size-scaling) : Effect of simulation cell size on calculated <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a>
+4. [**Temperature scaling**](#4.-Temperature-scaling) : Effect of system temperature on calculated <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a>
+5. [**Thermal conductivity plugins**](#5.-Thermal-conductivity-plugins) : Calculating <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> of MoS<sub>2</sub>
 6. [**Quantum corrections**](#6.-Quantum-corrections) : Beyond classical thermal conductivity simulations
     * Velocity autocorrelation in equilibrium simulations
     * Phonon density of states
