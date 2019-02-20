@@ -1,6 +1,6 @@
 ## Outline for the Manual
  
-1. [**Background**](#1.-Background) : Introduction to thermal conductivity, $\kappa$ of materials
+1. [**Background**](#1.-Background) : Introduction to thermal conductivity, <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> of materials
 2. [**NEMD simulations**](#2.-NEMD-Simulations) : Calculation of $\Large{\kappa}$ using molecular dynamics simulations
 3. [**System size scaling**](#3.-System-size-scaling) : Effect of simulation cell size on calculated $\kappa$
 4. [**Temperature scaling**](#4.-Temperature-scaling) : Effect of system temperature on calculated $\kappa$
@@ -51,7 +51,7 @@ As described previously, thermal conductivity is calculated by measuring the tem
 
 Specifically,
 
-Heat Flux, **$\displaystyle J_y = \frac{1}{2} \frac{E_0}{\Delta t}$**
+Heat Flux, <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\displaystyle&space;J_y&space;=&space;\frac{1}{2}&space;\frac{E_0}{\Delta&space;t}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\displaystyle&space;J_y&space;=&space;\frac{1}{2}&space;\frac{E_0}{\Delta&space;t}" title="\large \displaystyle J_y = \frac{1}{2} \frac{E_0}{\Delta t}" /></a>
 
 The factor $\displaystyle \frac{1}{2}$ comes from the fact that heat conduction happens along both the $+x$ and $-x$ directions away from the heat source at $x = \frac{L}{4}$.
 
