@@ -21,7 +21,7 @@
 ## Introduction to thermal conductivity
 
 
-* Thermal conductivity (denoted by the symbol $\kappa$) is a fundamental property of materials that determines their ability to conduct (i.e. transmit) heat (See Refs 1,2). Materials with a higher $\kappa$ values conduct heat well and low-$\kappa$ materials are more insulating (Ref 9.).
+* Thermal conductivity (denoted by the symbol <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a>) is a fundamental property of materials that determines their ability to conduct (i.e. transmit) heat (See Refs 1,2). Materials with a higher $\kappa$ values conduct heat well and low-<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> materials are more insulating (Ref 9.).
 
 <div align=center>
 <h4>Table 1: Thermal conductivity of common materials</h4>
@@ -39,10 +39,9 @@
 | Silica Aerogel | 0.003                                 |
 
 
-* High-$\kappa$ materials are commonly used in heat-sink and thermal-dissipation applications and materials with low thermal conductivity are used primarily for insulation. Low $\kappa$ insulating materials are also used for thermoelectric energy harvesting applications (See [Section 8](#8.-Current-research-applications)).
+* High-<a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> materials are commonly used in heat-sink and thermal-dissipation applications and materials with low thermal conductivity are used primarily for insulation. Low <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> insulating materials are also used for thermoelectric energy harvesting applications (See [Section 8](#8.-Current-research-applications)).
 
-* Both high and low $\kappa$ materials are extremely useful for engineers. Below, we see two demonstrations of the extremely-low $\kappa$ materials used as thermal insulators on the Space Shuttle during re-entry (Refs. 10,11).
-
+* Both high and low <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> materials are extremely useful for engineers. 
 # 2. NEMD Simulations
 
 ### Theory and Equations
