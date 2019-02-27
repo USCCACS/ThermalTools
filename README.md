@@ -27,7 +27,7 @@
 <h4>Table 1: Thermal conductivity of common materials</h4>
 </div>
 
-| Material       | $\huge{\kappa}$ (W/m-K) |
+| Material       | <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /> (W/m-K) |
 |----------------|:-------------------------------------:|
 | Diamond        | 1000                                  |
 | Silver         | 406                                   |
