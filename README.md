@@ -52,7 +52,7 @@ Specifically,
 
 Heat Flux, <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\displaystyle&space;J_y&space;=&space;\frac{1}{2}&space;\frac{E_0}{\Delta&space;t}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\displaystyle&space;J_y&space;=&space;\frac{1}{2}&space;\frac{E_0}{\Delta&space;t}" title="\large \displaystyle J_y = \frac{1}{2} \frac{E_0}{\Delta t}" /></a>
 
-The factor $\displaystyle \frac{1}{2}$ comes from the fact that heat conduction happens along both the $+x$ and $-x$ directions away from the heat source at $x = \frac{L}{4}$.
+The factor <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{2}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{2}$" title="\frac{1}{2}$" /></a> comes from the fact that heat conduction happens along both the $+x$ and $-x$ directions away from the heat source at <a href="https://www.codecogs.com/eqnedit.php?latex=x&space;=&space;\frac{L}{4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x&space;=&space;\frac{L}{4}" title="x = \frac{L}{4}" /></a>.
 
 Also, from Fourier's law of thermal conduction, we have $\displaystyle J_y = - \kappa \cdot A \cdot \frac{\mathrm{d}T}{\mathrm{d}x}$, where $A$ is the cross sectional area of heat transfer. (Ref 6)
 
