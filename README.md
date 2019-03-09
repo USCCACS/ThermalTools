@@ -12,8 +12,7 @@
     * Quantum-corrected thermal conductivity
 7. [**Summary**](#7.-Summary) : Things to remember when you do your own thermal conductivity simulations
 8. [**Current research applications**](#8.-Current-research-applications) : Engineering thermal conductivity of materials. Brief look at thermal conductivity of fractal and alloyed systems
-9. [**Downloads/Documentation**](#9.-Downloads-and-Documentation) : Thermal conductivity plugin downloads, Plugin manuals and contributing to software development
-10. [**References**](#10.-References)
+9. [**References**](#9.-References)
 
 # 1. Background 
 
