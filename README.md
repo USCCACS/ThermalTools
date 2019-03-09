@@ -76,3 +76,11 @@ These simulations are performed inside the Casimir Limit. This results in therma
 Here, <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{L}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{L}" title="\frac{1}{L}" /></a> is the inverse scattering length relating to the heat source-sink distance and <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{L_0}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{L_0}" title="\frac{1}{L_0}" /></a> is the material's inverse scattering length because of phonon phonon scattering. 
 
 It is important to note that length scaling happens in two dimensions. It is important to maintain a 2:1 ratio between length and width while increasing system size. The major difference is that one dimensional scaling ignores the contribution of phonons with wavelengths larger than the smallest dimension of the solid, whereas two dimensional scaling is inclusive.
+
+# 4. Temperature scaling
+
+
+## Thermal conductivity is affected by the temperature of the system
+
+
+The system temperature reflects the population of phonons in the material. At higher temperatures, there is a greater chance of phonon scattering (by other phonons) leading to reduced thermal conductivity.
