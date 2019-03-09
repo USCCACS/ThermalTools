@@ -123,6 +123,24 @@ where <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle&space;u&
 
 ### Major steps involved in VACF <a href="https://www.codecogs.com/eqnedit.php?latex=\rightarrow" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rightarrow" title="\rightarrow" /></a> VDOS  <a href="https://www.codecogs.com/eqnedit.php?latex=\rightarrow" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rightarrow" title="\rightarrow" /></a> C<sub>v</sub> calculations
  
-1. **Create a relaxed system at any given temperature**  : We use the LAMMPS Script `in.dos`
+1. **Create a relaxed system at any given temperature**  : We use a LAMMPS Script to create a dump file.
 2. **Compute the VACF, VDOS and C<sub>v</sub> from the LAMMPS dump file** : Use the file `caldos.py` which does the calculation for you
 
+The directory also has a file `caldos.py`. This is a python script that calls a C program `dos.c` that performs the VDOS calculations for us and plots the output. We won't actually be modifying that file in today's session. `dos.c` requires an input file `input.txt` that contains values for the various parameters required for the calculation. Let us take a look at that file.
+
+It is essential to understand the variables in this file. We will talk about a few important ones.
+
+1. `dT` refers to the time-step of the equilibrium MD simulations. In our case, it is 1 fs or 0.001 ps
+2. `TFREQ` refers to frequency with which snapshots are written out by LAMMPS. In our case, we write a snapshot every 10 timesteps
+3. `massMo` and `massS` are the atomic masses of Molybdenum (95.94) and Sulfur (32.065) respectively
+4. `Corrlength` is the length of the trajectory over which VACF is calculated
+5. `Ninitial` is the number of initial conditions for calculating VACF and `Ngap` is the time-delay between consecutive initial conditions. These two sampling parameters are described in detail below.
+
+### Important points about N<sub>initial</sub>, N<sub>gap</sub> and Corrlength
+
+One of the most significant improvements enabled by the thermal conductivity plugin tools is the usage of multiple initial conditions for calculation of velocity autocorrelation functions. This relies on the fact that the crystal at equilibrium 'loses memory' of its velocities after a few ps. Therefore, a single long MD trajectory can be broken into multiple overlapping independent sub-trajectories, each `Corrlength` steps long and separated from each successive sub-trajectory by `Ngap` steps. This significantly improves the sample-size for the calculation of atomic velocity correlations, often by over 1 order of magnitude.
+
+* N<sub>Frame</sub> is the total number of frames, which is equal to the number of steps that we run the simulation for.
+* We must ensure that <a href="https://www.codecogs.com/eqnedit.php?latex=\large{\left(N_{initial}\times&space;N_{gap}\right)&space;&plus;&space;Corrlength&space;\leq&space;N_{Frame}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large{\left(N_{initial}\times&space;N_{gap}\right)&space;&plus;&space;Corrlength&space;\leq&space;N_{Frame}}" title="\large{\left(N_{initial}\times N_{gap}\right) + Corrlength \leq N_{Frame}}" /></a>
+
+* If this condition isn't satisfied we will get an error, because the program does not get enough data
