@@ -84,3 +84,39 @@ It is important to note that length scaling happens in two dimensions. It is imp
 
 
 The system temperature reflects the population of phonons in the material. At higher temperatures, there is a greater chance of phonon scattering (by other phonons) leading to reduced thermal conductivity.
+
+# 6. Quantum corrections
+
+## Going beyond classical thermal conductivity simulations
+
+<h4>Image 4: Experimentally-measured thermal conductivity of two bulk semiconductors, Silicon and Germanium. Taken from Glassbrenner, C. J. and G. A. Slack, Phys. Rev. 134, 4A (1964) A1058-A1069</h4>
+<div align=center>
+<img src = "./Media/expt_thermal_conductivity.png" width="500" height="250">
+</div>
+
+The main discrepancy arises because classical molecular dynamics simulations (like ours) do not correctly describe the specific heat of materials (denoted by C<sub>V</sub>) at low temperatures. There is a method to correct for this deficiency by calculating the quantum-mechanically accurate specific heat of materials separately using equilibrium molecular dynamics simulations. This involves computing the velocity autocorrelation functions, the vibrational density of states and the specific heat, in that order, from the MD simulations, as shown below.
+
+
+<div align=center>
+<h4>Image 5: Workflow for calculating specific heat from equilibrium MD simulations</h4>
+<img src = "./Media/cv_workflow.png" width="500" height="250">
+</div>
+
+### Velocity AutoCorrelation Functions (VACF) and Vibrational Density Of States (VDOS)
+
+The velocity autocorrelation function Z(t) for atom type <a href="https://www.codecogs.com/eqnedit.php?latex=\alpha" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha" title="\alpha" /></a> is defined as <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle&space;Z_{\alpha}(t)&space;=&space;\frac{1}{N}\sum_{i=1}^N{\frac{v_i(t)\cdot&space;v_i(0)}{v_i(0)\cdot&space;v_i(0)}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle&space;Z_{\alpha}(t)&space;=&space;\frac{1}{N}\sum_{i=1}^N{\frac{v_i(t)\cdot&space;v_i(0)}{v_i(0)\cdot&space;v_i(0)}}" title="\displaystyle Z_{\alpha}(t) = \frac{1}{N}\sum_{i=1}^N{\frac{v_i(t)\cdot v_i(0)}{v_i(0)\cdot v_i(0)}}" /></a>
+
+
+The density of states is given by the equation
+<br>
+<a href="https://www.codecogs.com/eqnedit.php?latex=G(\omega)&space;=&space;\displaystyle&space;\sum_{\alpha}&space;\frac{6N_\alpha}{\pi}&space;\displaystyle\int\limits_{0}^{\infty}&space;Z_{\alpha}(t)cos(\omega&space;t)dt" target="_blank"><img src="https://latex.codecogs.com/gif.latex?G(\omega)&space;=&space;\displaystyle&space;\sum_{\alpha}&space;\frac{6N_\alpha}{\pi}&space;\displaystyle\int\limits_{0}^{\infty}&space;Z_{\alpha}(t)cos(\omega&space;t)dt" title="G(\omega) = \displaystyle \sum_{\alpha} \frac{6N_\alpha}{\pi} \displaystyle\int\limits_{0}^{\infty} Z_{\alpha}(t)cos(\omega t)dt" /></a>
+<br>
+Here Z<sub><a href="https://www.codecogs.com/eqnedit.php?latex=\alpha" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\alpha" title="\alpha" /></a></sub> is the velocity autocorrelation for each element. G(<a href="https://www.codecogs.com/eqnedit.php?latex=\omega" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\omega" title="\omega" /></a>) is the density of states. If you observe the following equation you can see that the vibrational density of state is simply proportional to the Fourier transform of the velocity autocorrelation. 
+<br>
+
+
+With the density of states available, we can calculate specific heat using the following equation. This simply multiplies the vibrational energy of each state with the temperature derivative of the probability of occupation of each vibrational state.
+
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle\frac{C_v&space;(T)}{3Nk_B}&space;=&space;\frac{\displaystyle\int\limits_{0}^{\infty}\frac{u^2&space;e^u}{{(e^u&space;-&space;1)}^2}G(\omega)d\omega}{\displaystyle\int\limits_{0}^{\infty}&space;G(\omega)d\omega}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle\frac{C_v&space;(T)}{3Nk_B}&space;=&space;\frac{\displaystyle\int\limits_{0}^{\infty}\frac{u^2&space;e^u}{{(e^u&space;-&space;1)}^2}G(\omega)d\omega}{\displaystyle\int\limits_{0}^{\infty}&space;G(\omega)d\omega}" title="\displaystyle\frac{C_v (T)}{3Nk_B} = \frac{\displaystyle\int\limits_{0}^{\infty}\frac{u^2 e^u}{{(e^u - 1)}^2}G(\omega)d\omega}{\displaystyle\int\limits_{0}^{\infty} G(\omega)d\omega}" /></a>
+where <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle&space;u&space;=&space;\frac{\hbar\omega}{k_B&space;T}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle&space;u&space;=&space;\frac{\hbar\omega}{k_B&space;T}" title="\displaystyle u = \frac{\hbar\omega}{k_B T}" /></a>
