@@ -165,3 +165,24 @@ The `caldos.py` script also calculates the temperature-dependent specific heat, 
 
 * Thermal conductivity simulations must be performed for a sufficiently long time (usually ~10s of ns) to ensure that a good steady state has been reached
 * We must ensure good sampling (i.e. number of independent initial conditions) in the VACF and VDOS calculation for smooth curves.
+
+# 9. References
+
+---
+
+1. Cahill, D.G., et al., [Nanoscale thermal transport](http://aip.scitation.org/doi/10.1063/1.1524305). Journal of Applied Physics, 2003. 93(2): p. 793-818.
+2. Cahill, D.G., et al., [Nanoscale thermal transport. II. 2003-2012](http://aip.scitation.org/doi/10.1063/1.4832615). Applied Physics Reviews, 2014. 1(1).
+3. Payam, N. and J.S. David, [Thermal conductivity of single-layer WSe 2 by a Stillinger–Weber potential](http://iopscience.iop.org/article/10.1088/1361-6528/aa55e1/meta). Nanotechnology, 2017. 28(7): p. 075708.
+4. Sahoo, S., et al., [Temperature-Dependent Raman Studies and Thermal Conductivity of Few-Layer MoS2](https://pubs.acs.org/doi/10.1021/jp402509w). Journal of Physical Chemistry C, 2013. 117(17): p. 9042-9047.
+5. Yan, R.S., et al., [Thermal Conductivity of Monolayer Molybdenum Disulfide Obtained from Temperature-Dependent Raman Spectroscopy.](https://pubs.acs.org/doi/10.1021/nn405826k) ACS Nano, 2014. 8(1): p. 986-993.
+6. Wu, X.F., et al., [How to characterize thermal transport capability of 2D materials fairly? - Sheet thermal conductance and the choice of thickness.](https://www.sciencedirect.com/science/article/pii/S0009261416310193) Chemical Physics Letters, 2017. 669: p. 233-237.
+7. Klemens, P.G., [Thermal Conductivity and Lattice Vibrational Modes.](https://www.sciencedirect.com/science/article/pii/S0081194708605512) Solid State Physics, 1958. 7: p. 1-98.
+8. Thermal Conductivity Wiki page: https://en.wikipedia.org/wiki/Thermal_conductivity
+9. Fourier's Law:  https://en.wikipedia.org/wiki/Thermal_conduction
+10. Thermal Insulation in a Space Shuttle: https://www.nasa.gov/sites/default/files/atoms/files/shuttle_tiles_5_8v2.pdf
+11. Space Shuttle thermal protection system: https://en.wikipedia.org/wiki/Space_Shuttle_thermal_protection_system
+12. Sierpinski carpet: https://en.wikipedia.org/wiki/Sierpinski_carpet
+
+---
+
+<div align=right><a href="#Outline-for-this-hands-on-session">[^Top]</a></div>
