@@ -129,9 +129,9 @@ The directory also has a file `caldos.py`. This is a python script that calls a 
 
 It is essential to understand the variables in this file. We will talk about a few important ones.
 
-1. `dT` refers to the time-step of the equilibrium MD simulations. In our case, it is 1 fs or 0.001 ps
-2. `TFREQ` refers to frequency with which snapshots are written out by LAMMPS. In our case, we write a snapshot every 10 timesteps
-3. `massMo` and `massS` are the atomic masses of Molybdenum (95.94) and Sulfur (32.065) respectively
+1. `dT` refers to the time-step of the equilibrium MD simulations. 
+2. `TFREQ` refers to frequency with which snapshots are written out by LAMMPS. I
+3. `massMo` and `massS` are the atomic masses of Molybdenum (95.94) and Sulfur (32.065) respectively. We can change them according to the atoms in the system. 
 4. `Corrlength` is the length of the trajectory over which VACF is calculated
 5. `Ninitial` is the number of initial conditions for calculating VACF and `Ngap` is the time-delay between consecutive initial conditions. These two sampling parameters are described in detail below.
 
