@@ -62,5 +62,17 @@ Note here that the thermal conductivity <a href="https://www.codecogs.com/eqnedi
 
 <div align=center>
 <h4>Image 1: Schematic of NEMD simulations for measuring thermal conductivity of 2D materials</h4>
-<img src = "./Media/calculation_schematic.png" style = "width:100px;height:50px">
+<img src = "./Media/calculation_schematic.png"  width="500" height="250">
 </div>
+# 3. System size scaling
+
+## Thermal conductivity is affected by size of the system in NEMD simulations
+Length Scaling is a direct consequence because of MD. The thermal transport in NEMD happens over two square regions. Phonons having mean free path largest than the size of the square do not take part in thermal transport in our system setup. As the system increases in size, more and more phonons are being involved in thermal transport. Studies have shown the mean free path for Transition metal Dichalcogenides is of the order of 1000 nm \cite{gandi2016thermal}. It is therefore essential to scale systems to at least one third its value.
+
+These simulations are performed inside the Casimir Limit \cite{casimir1938note}. This results in thermal conductivity values having a strong size dependence. Following the scaling scheme of Schon \cite{oligschleger1999simulation} which uses Matthiessen's Rule  \cite{klemens1958thermal}. To predict the thermal conductivity of the infinite system we make use of a linear function \cite{schelling2002comparison} such as
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{\kappa}&space;\propto&space;\frac{1}{\kappa_0}&space;\bigg(&space;\frac{1}{L}&space;&plus;&space;\frac{1}{L_0}&space;\bigg)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{\kappa}&space;\propto&space;\frac{1}{\kappa_0}&space;\bigg(&space;\frac{1}{L}&space;&plus;&space;\frac{1}{L_0}&space;\bigg)" title="\frac{1}{\kappa} \propto \frac{1}{\kappa_0} \bigg( \frac{1}{L} + \frac{1}{L_0} \bigg)" /></a>
+Here, <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{L}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{L}" title="\frac{1}{L}" /></a> is the inverse scattering length relating to the heat source-sink distance and $\frac{1}{L_0}$ is the material's inverse scattering length because of phonon phonon scattering. The thermal conductivity of the bulk material can be obtained by extrapolating Figure \ref{Figure2} a) and Figure \ref{Figure3} a) to zero. This gives us a value of $277.58 W/mK$ for MoSe$_2$ and $271.095 W/mK$ for WSe$_2$.
+
+
+It is important to note that length scaling in this work happens in two dimensions. It is important to maintain a 2:1 ratio between length and width while increasing system size. Previous results, in contrast have reported only one dimensional scaling. The major difference is that one dimensional scaling ignores the contribution of phonons with wavelengths larger than the smallest dimension of the solid, whereas two dimensional scaling is inclusive.
