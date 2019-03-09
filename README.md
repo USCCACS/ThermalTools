@@ -84,6 +84,13 @@ It is important to note that length scaling happens in two dimensions. It is imp
 
 The system temperature reflects the population of phonons in the material. At higher temperatures, there is a greater chance of phonon scattering (by other phonons) leading to reduced thermal conductivity.
 
+# 5. Thermal conductivity plugins
+## Calculating <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a> of MoS<sub>2</sub>
+
+Now that we have the temperature gradient data for our length-scaling runs, we will see how to calculate the thermal conductivity values using our Python-based thermal conductivity plugin, `calthermal_conductivity.py ` 
+
+The next input file, `Temperature.txt`, is a direct output of our MD simulations. This file contains the temperature of the atoms, calculated as <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\displaystyle&space;T&space;=&space;\frac{2}{3&space;k_{\mathrm{B}}}&space;\frac{p^2}{2m}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\displaystyle&space;T&space;=&space;\frac{2}{3&space;k_{\mathrm{B}}}&space;\frac{p^2}{2m}" title="\displaystyle T = \frac{2}{3 k_{\mathrm{B}}} \frac{p^2}{2m}" /></a> averaged over bins along the thermal transport, i.e. x, direction. The second column is the coordinate in the system and the fourth column is the corresponding average temperature.
+
 # 6. Quantum corrections
 
 ## Going beyond classical thermal conductivity simulations
