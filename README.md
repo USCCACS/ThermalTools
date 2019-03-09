@@ -166,6 +166,28 @@ The `caldos.py` script also calculates the temperature-dependent specific heat, 
 * Thermal conductivity simulations must be performed for a sufficiently long time (usually ~10s of ns) to ensure that a good steady state has been reached
 * We must ensure good sampling (i.e. number of independent initial conditions) in the VACF and VDOS calculation for smooth curves.
 
+# 8. Current research applications
+
+
+## Thermal transport in fractal crystals
+
+* Fractals are infinitely complex patterns that are self-similar across different scales. They are created by repeating a simple process over and over in an ongoing feedback loop driven by recursion (See Ref. 12). 
+
+
+<div align=center>
+<h4>Image 7: The Sierpinski carpet is a model fractal system in two-dimensions</h4>
+<img src = "./Media/Animated_Sierpinski_carpet.gif" width = "200" height = "200">
+</div>
+
+* Here is a picture depicting the structure and heat flux in such a fractal system composed of MoSe<sub>2</sub> and WSe<sub>2</sub> materials.
+
+<div align=center>
+<h4>Image 8: Atomic structure and heat-flux through a fractal two-dimensional material</h4>
+<img src = "./Media/frac_heatflux.png" width = "800">
+</div>
+
+* Local heat flux $\large{\displaystyle \vec{J_{at}} = \displaystyle \mathbb{E}[\sigma.\vec{v}]_{t}}$. It is clear from the above figure that majority of the heat flux moves through the MoSe<sub>2</sub> lattice and the interface acts as a source of phonon scattering.
+
 # 9. References
 
 ---
