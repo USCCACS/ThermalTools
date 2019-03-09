@@ -69,7 +69,7 @@ Note here that the thermal conductivity <a href="https://www.codecogs.com/eqnedi
 ## Thermal conductivity is affected by size of the system in NEMD simulations
 Length Scaling is a direct consequence because of MD. The thermal transport in NEMD happens over two square regions. Phonons having mean free path largest than the size of the square do not take part in thermal transport in our system setup. As the system increases in size, more and more phonons are being involved in thermal transport. Studies have shown the mean free path for Transition metal Dichalcogenides is of the order of 1000 nm \cite{gandi2016thermal}. It is therefore essential to scale systems to at least one third its value.
 
-These simulations are performed inside the Casimir Limit. This results in thermal conductivity values having a strong size dependence. Following the scaling scheme of Schon which uses Matthiessen's Rule . To predict the thermal conductivity of the infinite system we make use of a linear function such as
+These simulations are performed inside the Casimir Limit (See Ref.13). This results in thermal conductivity values having a strong size dependence. Following the scaling scheme of Schon which uses Matthiessen's Rule . To predict the thermal conductivity of the infinite system we make use of a linear function such as
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{\kappa}&space;\propto&space;\frac{1}{\kappa_0}&space;\bigg(&space;\frac{1}{L}&space;&plus;&space;\frac{1}{L_0}&space;\bigg)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{\kappa}&space;\propto&space;\frac{1}{\kappa_0}&space;\bigg(&space;\frac{1}{L}&space;&plus;&space;\frac{1}{L_0}&space;\bigg)" title="\frac{1}{\kappa} \propto \frac{1}{\kappa_0} \bigg( \frac{1}{L} + \frac{1}{L_0} \bigg)" /></a>
 Here, <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{L}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{L}" title="\frac{1}{L}" /></a> is the inverse scattering length relating to the heat source-sink distance and <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{L_0}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{L_0}" title="\frac{1}{L_0}" /></a> is the material's inverse scattering length because of phonon phonon scattering. 
@@ -204,7 +204,7 @@ The `caldos.py` script also calculates the temperature-dependent specific heat, 
 10. Thermal Insulation in a Space Shuttle: https://www.nasa.gov/sites/default/files/atoms/files/shuttle_tiles_5_8v2.pdf
 11. Space Shuttle thermal protection system: https://en.wikipedia.org/wiki/Space_Shuttle_thermal_protection_system
 12. Sierpinski carpet: https://en.wikipedia.org/wiki/Sierpinski_carpet
-
+13. HBG Casimir. [Note on the conduction of heat in crystals](https://www.sciencedirect.com/journal/physica/vol/5/issue/6) Physica, 5(6):495-500, 1938
 ---
 
 <div align=right><a href="#Outline-for-this-hands-on-session">[^Top]</a></div>
