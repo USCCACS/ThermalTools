@@ -144,3 +144,13 @@ One of the most significant improvements enabled by the thermal conductivity plu
 * We must ensure that <a href="https://www.codecogs.com/eqnedit.php?latex=\large{\left(N_{initial}\times&space;N_{gap}\right)&space;&plus;&space;Corrlength&space;\leq&space;N_{Frame}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large{\left(N_{initial}\times&space;N_{gap}\right)&space;&plus;&space;Corrlength&space;\leq&space;N_{Frame}}" title="\large{\left(N_{initial}\times N_{gap}\right) + Corrlength \leq N_{Frame}}" /></a>
 
 * If this condition isn't satisfied we will get an error, because the program does not get enough data
+
+## Applying Quantum corrections to our thermal conductivity
+
+
+The `caldos.py` script also calculates the temperature-dependent specific heat, $C_v$, of the material using the density of states. This value can be used to correct our thermal conductivity value that was over-estimated at low temperatures using the equation below.
+
+
+<div align=center>
+<a href="https://www.codecogs.com/eqnedit.php?latex=\Large{\kappa_{Corr}&space;=&space;\displaystyle\left(\frac{C_v(T)}{3Nk_B}\right)&space;\cdot&space;\kappa_{MD}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Large{\kappa_{Corr}&space;=&space;\displaystyle\left(\frac{C_v(T)}{3Nk_B}\right)&space;\cdot&space;\kappa_{MD}}" title="\Large{\kappa_{Corr} = \displaystyle\left(\frac{C_v(T)}{3Nk_B}\right) \cdot \kappa_{MD}}" /></a>
+    </div>
