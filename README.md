@@ -99,7 +99,7 @@ The main discrepancy arises because classical molecular dynamics simulations (li
 
 <div align=center>
 <h4>Image 5: Workflow for calculating specific heat from equilibrium MD simulations</h4>
-<img src = "./Media/cv_workflow.png" width="500" height="250">
+<img src = "./Media/cv_workflow.png" width="800" height="250">
 </div>
 
 ### Velocity AutoCorrelation Functions (VACF) and Vibrational Density Of States (VDOS)
