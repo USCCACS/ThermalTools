@@ -120,3 +120,9 @@ With the density of states available, we can calculate specific heat using the f
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle\frac{C_v&space;(T)}{3Nk_B}&space;=&space;\frac{\displaystyle\int\limits_{0}^{\infty}\frac{u^2&space;e^u}{{(e^u&space;-&space;1)}^2}G(\omega)d\omega}{\displaystyle\int\limits_{0}^{\infty}&space;G(\omega)d\omega}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle\frac{C_v&space;(T)}{3Nk_B}&space;=&space;\frac{\displaystyle\int\limits_{0}^{\infty}\frac{u^2&space;e^u}{{(e^u&space;-&space;1)}^2}G(\omega)d\omega}{\displaystyle\int\limits_{0}^{\infty}&space;G(\omega)d\omega}" title="\displaystyle\frac{C_v (T)}{3Nk_B} = \frac{\displaystyle\int\limits_{0}^{\infty}\frac{u^2 e^u}{{(e^u - 1)}^2}G(\omega)d\omega}{\displaystyle\int\limits_{0}^{\infty} G(\omega)d\omega}" /></a>
 where <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle&space;u&space;=&space;\frac{\hbar\omega}{k_B&space;T}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle&space;u&space;=&space;\frac{\hbar\omega}{k_B&space;T}" title="\displaystyle u = \frac{\hbar\omega}{k_B T}" /></a>
+
+### Major steps involved in VACF <a href="https://www.codecogs.com/eqnedit.php?latex=\rightarrow" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rightarrow" title="\rightarrow" /></a> VDOS  <a href="https://www.codecogs.com/eqnedit.php?latex=\rightarrow" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\rightarrow" title="\rightarrow" /></a> C<sub>v</sub> calculations
+ 
+1. **Create a relaxed system at any given temperature**  : We use the LAMMPS Script `in.dos`
+2. **Compute the VACF, VDOS and C<sub>v</sub> from the LAMMPS dump file** : Use the file `caldos.py` which does the calculation for you
+
