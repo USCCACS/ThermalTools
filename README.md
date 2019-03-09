@@ -58,7 +58,7 @@ Also, from Fourier's law of thermal conduction, we have <a href="https://www.cod
 
 Putting these equations together, we have <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle&space;\kappa&space;=&space;-&space;\frac{1}{2\&space;A}&space;\frac{E_0}{\Delta&space;t}&space;\frac{\mathrm{d}x}{\mathrm{d}T}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle&space;\kappa&space;=&space;-&space;\frac{1}{2\&space;A}&space;\frac{E_0}{\Delta&space;t}&space;\frac{\mathrm{d}x}{\mathrm{d}T}" title="\displaystyle \kappa = - \frac{1}{2\ A} \frac{E_0}{\Delta t} \frac{\mathrm{d}x}{\mathrm{d}T}" /></a>
 
-Note here that the thermal conductivity $\kappa$ goes as the _inverse_ of the temperature gradient. More conducting material will have 'flatter' temperature profiles.
+Note here that the thermal conductivity <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a>  goes as the _inverse_ of the temperature gradient. More conducting material will have 'flatter' temperature profiles.
 
 <div align=center>
 <h4>Image 3: Schematic of NEMD simulations for measuring thermal conductivity of 2D materials</h4>
