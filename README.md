@@ -186,7 +186,7 @@ The `caldos.py` script also calculates the temperature-dependent specific heat, 
 <img src = "./Media/frac_heatflux.png" width = "800">
 </div>
 
-* Local heat flux $\large{\displaystyle \vec{J_{at}} = \displaystyle \mathbb{E}[\sigma.\vec{v}]_{t}}$. It is clear from the above figure that majority of the heat flux moves through the MoSe<sub>2</sub> lattice and the interface acts as a source of phonon scattering.
+* Local heat flux <a href="https://www.codecogs.com/eqnedit.php?latex=\large{\displaystyle&space;\vec{J_{at}}&space;=&space;\displaystyle&space;\mathbb{E}[\sigma.\vec{v}]_{t}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\large{\displaystyle&space;\vec{J_{at}}&space;=&space;\displaystyle&space;\mathbb{E}[\sigma.\vec{v}]_{t}}" title="\large{\displaystyle \vec{J_{at}} = \displaystyle \mathbb{E}[\sigma.\vec{v}]_{t}}" /></a>. It is clear from the above figure that majority of the heat flux moves through the MoSe<sub>2</sub> lattice and the interface acts as a source of phonon scattering.
 
 # 9. References
 
