@@ -148,7 +148,7 @@ One of the most significant improvements enabled by the thermal conductivity plu
 ## Applying Quantum corrections to our thermal conductivity
 
 
-The `caldos.py` script also calculates the temperature-dependent specific heat, $C_v$, of the material using the density of states. This value can be used to correct our thermal conductivity value that was over-estimated at low temperatures using the equation below.
+The `caldos.py` script also calculates the temperature-dependent specific heat, C<sub>v</sub>, of the material using the density of states. This value can be used to correct our thermal conductivity value that was over-estimated at low temperatures using the equation below.
 
 
 <div align=center>
