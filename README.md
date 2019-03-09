@@ -62,6 +62,5 @@ Note here that the thermal conductivity <a href="https://www.codecogs.com/eqnedi
 
 <div align=center>
 <h4>Image 3: Schematic of NEMD simulations for measuring thermal conductivity of 2D materials</h4>
-![alt text](https://github.com/USCCACS/Thermal_Conductivity_Workshop/blob/master/Media/thermal.jpg)
 <img src = "./Media/calculation_schematic.png" style = "width:500px;height:250px">
 </div>
