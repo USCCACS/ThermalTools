@@ -10,7 +10,7 @@
     * Phonon density of states
     * Specific heat of materials
     * Quantum-corrected thermal conductivity
-7. [**Summary and take-away messages**](#7.-Summary-and-take-away-messages) : Things to remember when you do your own thermal conductivity simulations
+7. [**Summary**](#7.-Summary) : Things to remember when you do your own thermal conductivity simulations
 8. [**Current research applications**](#8.-Current-research-applications) : Engineering thermal conductivity of materials. Brief look at thermal conductivity of fractal and alloyed systems
 9. [**Downloads/Documentation**](#9.-Downloads-and-Documentation) : Thermal conductivity plugin downloads, Plugin manuals and contributing to software development
 10. [**References**](#10.-References)
@@ -154,3 +154,15 @@ The `caldos.py` script also calculates the temperature-dependent specific heat, 
 <div align=center>
 <a href="https://www.codecogs.com/eqnedit.php?latex=\Large{\kappa_{Corr}&space;=&space;\displaystyle\left(\frac{C_v(T)}{3Nk_B}\right)&space;\cdot&space;\kappa_{MD}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\Large{\kappa_{Corr}&space;=&space;\displaystyle\left(\frac{C_v(T)}{3Nk_B}\right)&space;\cdot&space;\kappa_{MD}}" title="\Large{\kappa_{Corr} = \displaystyle\left(\frac{C_v(T)}{3Nk_B}\right) \cdot \kappa_{MD}}" /></a>
     </div>
+    
+# 7. Summary
+
+
+* NEMD is a simple method to compute lattice thermal conductivity of nanomaterials
+* The thermal conductivity plugin, `calthermal_conductivity.py` helps with size-scaling and temperature-scaling calculations to obtain the material-intrinsic thermal conductivity at different temperatures
+* The thermal conductivity plugin, `caldos.py` helps include quantum-mechanical corrections to computed $\kappa$ to obtain experimentally-realistic values at low temperatures
+
+---
+
+* Thermal conductivity simulations must be performed for a sufficiently long time (usually ~10s of ns) to ensure that a good steady state has been reached
+* We must ensure good sampling (i.e. number of independent initial conditions) in the VACF and VDOS calculation for smooth curves.
