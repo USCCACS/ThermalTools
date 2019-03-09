@@ -61,6 +61,6 @@ Putting these equations together, we have <a href="https://www.codecogs.com/eqne
 Note here that the thermal conductivity <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\kappa" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\large&space;\kappa" title="\large \kappa" /></a>  goes as the _inverse_ of the temperature gradient. More conducting material will have 'flatter' temperature profiles.
 
 <div align=center>
-<h4>Image 3: Schematic of NEMD simulations for measuring thermal conductivity of 2D materials</h4>
+<h4>Image 1: Schematic of NEMD simulations for measuring thermal conductivity of 2D materials</h4>
 <img src = "./Media/calculation_schematic.png" style = "width:100px;height:50px">
 </div>
