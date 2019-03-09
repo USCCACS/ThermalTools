@@ -54,9 +54,9 @@ Heat Flux, <a href="https://www.codecogs.com/eqnedit.php?latex=\large&space;\dis
 
 The factor <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{2}$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{2}$" title="\frac{1}{2}$" /></a> comes from the fact that heat conduction happens along both the +x and -x directions away from the heat source at <a href="https://www.codecogs.com/eqnedit.php?latex=x&space;=&space;\frac{L}{4}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?x&space;=&space;\frac{L}{4}" title="x = \frac{L}{4}" /></a>.
 
-Also, from Fourier's law of thermal conduction, we have $\displaystyle J_y = - \kappa \cdot A \cdot \frac{\mathrm{d}T}{\mathrm{d}x}$, where $A$ is the cross sectional area of heat transfer. (Ref 6)
+Also, from Fourier's law of thermal conduction, we have <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle&space;J_y&space;=&space;-&space;\kappa&space;\cdot&space;A&space;\cdot&space;\frac{\mathrm{d}T}{\mathrm{d}x}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle&space;J_y&space;=&space;-&space;\kappa&space;\cdot&space;A&space;\cdot&space;\frac{\mathrm{d}T}{\mathrm{d}x}" title="\displaystyle J_y = - \kappa \cdot A \cdot \frac{\mathrm{d}T}{\mathrm{d}x}" /></a>, where A is the cross sectional area of heat transfer. (Ref 6)
 
-Putting these equations together, we have $\displaystyle \kappa = - \frac{1}{2\ A} \frac{E_0}{\Delta t} \frac{\mathrm{d}x}{\mathrm{d}T}$
+Putting these equations together, we have <a href="https://www.codecogs.com/eqnedit.php?latex=\displaystyle&space;\kappa&space;=&space;-&space;\frac{1}{2\&space;A}&space;\frac{E_0}{\Delta&space;t}&space;\frac{\mathrm{d}x}{\mathrm{d}T}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\displaystyle&space;\kappa&space;=&space;-&space;\frac{1}{2\&space;A}&space;\frac{E_0}{\Delta&space;t}&space;\frac{\mathrm{d}x}{\mathrm{d}T}" title="\displaystyle \kappa = - \frac{1}{2\ A} \frac{E_0}{\Delta t} \frac{\mathrm{d}x}{\mathrm{d}T}" /></a>
 
 Note here that the thermal conductivity $\kappa$ goes as the _inverse_ of the temperature gradient. More conducting material will have 'flatter' temperature profiles.
 
